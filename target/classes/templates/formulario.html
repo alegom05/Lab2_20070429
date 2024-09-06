@@ -30,7 +30,7 @@
 
         <div th:if="${matriz != null}">
             <table class="matrix-table">
-                <span th:text="${'Foto ' + num}"></span>
+                <span th:text="${'Fotografía número ' + num}"></span>
                 <tr th:each="fila : ${matriz}">
                     <td th:each="celda : ${fila}"></td>
                 </tr>
@@ -40,12 +40,12 @@
 
     <style>
         .matrix-container {
-            margin-bottom: 20px; /* Adds space below each matrix */
+            margin-bottom: 20px; /* Espacio debajo de la matriz */
         }
 
         .matrix-table {
             border-collapse: collapse;
-            margin: 0 auto; /* Centers the table horizontally */
+            margin: 0 auto; /* Centra horizontalmente */
         }
 
         .matrix-table td {
@@ -54,7 +54,7 @@
             text-align: center;
         }
     </style>
-    <!--
+    <!-- Datos del anterior ejercicio
     <h2>Mi Dato Específico:</h2>
     <label>Número de celda:</label>
     <input type="number" name="fotos" /><br  /><br>

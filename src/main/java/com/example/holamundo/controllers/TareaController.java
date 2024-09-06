@@ -23,7 +23,6 @@ public class TareaController {
         model.addAttribute("columnas", juego.getColumnas());
         model.addAttribute("posiciones", juego.getPosiciones());
         model.addAttribute("fotos", juego.getFotos());
-
         return "home";
     }
 
@@ -50,21 +49,22 @@ public class TareaController {
     @GetMapping("/registrar")
     public String mostrarMatrices(Model model, Juego juego){
         ArrayList<Persona> listaPersonas = new ArrayList<>();
+        //Pruebas
         listaPersonas.add(new Persona("Alejandro", "Gomez", "12345678", 20170101, "San Borja"));
         listaPersonas.add(new Persona("Mauricio", "Gomez", "85695489", 20213435,"San Miguel"));
         listaPersonas.add(new Persona("Barbara", "Bellido", "75856985", 20090234,"San Isidro"));
         model.addAttribute("listaPersonas", listaPersonas);
-
+        //Matriz
         int[][] matriz = generarMatriz(juego.getFilas(), juego.getColumnas());
         model.addAttribute("filas", juego.getFilas());
         model.addAttribute("columnas", juego.getColumnas());
         model.addAttribute("posiciones", juego.getPosiciones());
         model.addAttribute("fotos", juego.getFotos());
         model.addAttribute("matriz", matriz);
-
         return "formulario";
     }
 
+    //No es necesaria
     @PostMapping(value = { "/registrar","/registrar/"})
     public String agregarNumero( Persona persona, Juego juego){
         System.out.println("Tamaño: " + juego.getFilas() + "\n" +
@@ -75,8 +75,7 @@ public class TareaController {
         return "formulario";
     }
 
-
-
+    //Método para generar matriz
     public int[][] generarMatriz(int m, int n) {
         int[][] matrix = new int[m][n];
         Random random = new Random();

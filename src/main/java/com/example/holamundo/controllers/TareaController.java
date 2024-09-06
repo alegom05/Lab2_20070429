@@ -16,7 +16,7 @@ public class TareaController {
 
     private int[][] matriz; // Atributo para almacenar la matriz generada
 
-
+    //Configuración
     @GetMapping(value = { "/",""})
     public String home(Model model, Juego juego) {
         model.addAttribute("filas", juego.getFilas());
@@ -46,6 +46,7 @@ public class TareaController {
         return "formulario";
     }
 
+    //Fotos de patos
     @GetMapping("/registrar")
     public String mostrarMatrices(Model model, Juego juego){
         ArrayList<Persona> listaPersonas = new ArrayList<>();
@@ -82,7 +83,7 @@ public class TareaController {
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                matrix[i][j] = random.nextInt(9); // Genera números aleatorios entre 0 y 99
+                matrix[i][j] = 0; // Genera números aleatorios entre 0 y 99
             }
         }
         return matrix;

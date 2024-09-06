@@ -15,13 +15,16 @@
 </style>
 <body>
 <div class="container">
-    <h1>Juego de Bingo</h1>
+    <h1>Lista de fotografías de la laguna captada por el dron</h1>
 
     <h2>Matriz Generada</h2>
-    <div th:each="num : ${#numbers.sequence(1, tarjetas)}" class="matrix-container">
+    <div th:each="num : ${#numbers.sequence(1, fotos)}" class="matrix-container">
+
         <div th:if="${matriz != null}">
             <table class="matrix-table">
+
                 <tr th:each="fila : ${matriz}">
+                    <span th:text="${'Foto ' + num}"></span>
                     <td th:each="celda : ${fila}" th:text="${celda}"></td>
                 </tr>
             </table>
@@ -46,13 +49,12 @@
     </style>
     <div>
         <h2>Mi Dato Específico:</h2>
-        <p th:text="${tarjetas}"></p>
     </div>
 
     <br><br>
     <label>Ingresar número de bingo:</label>
     <br>
-    <input type="text" name="tamano" /><br  /><br>
+    <input type="number" name="fotos" /><br  /><br>
     <a th:href="@{/registrar}" class="btn btn-primary">Agregar número</a>
     <a th:href="@{/}" class="btn btn-danger">Reiniciar juego</a>
 

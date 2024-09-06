@@ -16,7 +16,9 @@ public class Juego {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int tamano;
-    private int tarjetas;
+    private int filas;
+    private int columnas;
+    private int posiciones;
+    private int fotos;
 
 }
